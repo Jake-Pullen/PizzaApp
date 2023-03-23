@@ -1,1 +1,1 @@
-﻿CREATE SCHEMA [Customer]
+﻿CREATE SCHEMA [customer]

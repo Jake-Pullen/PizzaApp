@@ -1,1 +1,1 @@
-﻿CREATE SCHEMA [Delivery]
+﻿CREATE SCHEMA [delivery]

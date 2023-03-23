@@ -10,7 +10,7 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 -- Sample data for Customer table
-INSERT INTO [Customer].Details (customer_id, full_name, phone_num, street_address, city, postcode)
+INSERT INTO [Customer].details (customer_id, full_name, phone_num, street_address, city, postcode)
 VALUES
   (1, 'John Smith', '+44 20 1234 5678', '12 High Street', 'London', 'SW1A 1AA'),
   (2, 'Jane Doe', '+44 161 234 5678', '21 Park Road', 'Manchester', 'M14 5DP'),
@@ -34,7 +34,7 @@ VALUES
   (20, 'Emma Wilson', '+44 141 456 7890', '14 Main Road', 'Glasgow', 'G3 7XX')
 
   -- Order table
-INSERT INTO [Order].Details (order_id, customer_id, order_date, order_status, payment_method, total_price)
+INSERT INTO [Order].details (order_id, customer_id, order_date, order_status, payment_method, total_price)
 VALUES
   (1, 1, '2022-01-05 14:30:00', 'delivered', 'credit card', 17.99),
   (2, 1, '2022-02-14 19:45:00', 'delivered', 'cash', 22.99),

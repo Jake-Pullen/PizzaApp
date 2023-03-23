@@ -56,27 +56,31 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Schemas" />
+    <Folder Include="schemas" />
     <Folder Include="Tables" />
     <Folder Include="Data" />
-    <Folder Include="Tables\Customer" />
-    <Folder Include="Tables\Delivery" />
-    <Folder Include="Tables\Order" />
-    <Folder Include="Tables\Payment" />
+    <Folder Include="Tables\customer" />
+    <Folder Include="Tables\delivery" />
+    <Folder Include="Tables\order" />
+    <Folder Include="Tables\payment" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Schemas\Order.sql" />
+    <Build Include="Schemas\order.sql" />
     <PostDeploy Include="Data\AddData.sql" />
-    <Build Include="Schemas\Payment.sql" />
-    <Build Include="Schemas\Delivery.sql" />
-    <Build Include="Schemas\Pizza.sql" />
-    <Build Include="Schemas\Customer.sql" />
-    <Build Include="Tables\Customer\Details.sql" />
-    <Build Include="Tables\Delivery\Details.sql" />
-    <Build Include="Tables\Order\Pizzas.sql" />
-    <Build Include="Tables\Order\Orders.sql" />
-    <Build Include="Tables\Order\Status.sql" />
-    <Build Include="Tables\Payment\Details.sql" />
+    <Build Include="Schemas\payment.sql" />
+    <Build Include="Schemas\delivery.sql" />
+    <Build Include="Schemas\pizza.sql" />
+    <Build Include="Schemas\customer.sql" />
+    <Build Include="Tables\Customer\details.sql" />
+    <Build Include="Tables\Delivery\details.sql" />
+    <Build Include="Tables\Order\pizzas.sql" />
+    <Build Include="Tables\order\details.sql" />
+    <Build Include="Tables\Order\status.sql" />
+    <Build Include="Tables\Payment\details.sql" />
+    <Build Include="Tables\Order\templates.sql" />
+    <Build Include="Tables\order\template_toppings.sql" />
+    <Build Include="Tables\Order\toppings.sql" />
+    <Build Include="Tables\Order\pizza_toppings.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="PizzaDB.refactorlog" />

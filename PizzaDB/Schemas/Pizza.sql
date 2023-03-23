@@ -1,1 +1,1 @@
-﻿CREATE SCHEMA [Pizza]
+﻿CREATE SCHEMA [pizza]

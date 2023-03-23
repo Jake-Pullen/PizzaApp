@@ -1,1 +1,1 @@
-﻿CREATE SCHEMA [Payment]
+﻿CREATE SCHEMA [payment]

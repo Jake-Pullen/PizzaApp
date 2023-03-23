@@ -1,1 +1,1 @@
-﻿CREATE SCHEMA [Order]
+﻿CREATE SCHEMA [order]

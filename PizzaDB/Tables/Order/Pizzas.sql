@@ -1,6 +1,6 @@
-﻿CREATE TABLE [Order].Pizzas (
-  Order_Pizza_ID INT PRIMARY KEY,
-  Order_ID INT NOT NULL,
-  pizza_template_ID INT NULL
-  FOREIGN KEY (Order_ID) REFERENCES [Order].Details(Order_ID)
+﻿CREATE TABLE [order].pizzas (
+  order_Pizza_id INT PRIMARY KEY,
+  order_id INT NOT NULL,
+  pizza_template_id INT NULL
+  FOREIGN KEY (order_id) REFERENCES [order].details(order_id)
 );

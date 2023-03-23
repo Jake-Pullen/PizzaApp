@@ -1,4 +1,4 @@
-﻿CREATE TABLE [Customer].Details (
+﻿CREATE TABLE [customer].details (
   customer_id INT PRIMARY KEY,
   full_name VARCHAR(100) NOT NULL,
   phone_num VARCHAR(20) NOT NULL,
