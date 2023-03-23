@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="31cd59cf-8dfc-429b-89db-f52907d290a0" ChangeDateTime="03/23/2023 12:15:49">
+    <Property Name="ElementName" Value="[dbo].[OrderDetails]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[dbo]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="OrderPizzas" />
+  </Operation>
+  <Operation Name="Move Schema" Key="665a3a6f-f9f8-4a7c-8eb2-47ddfb7270c4" ChangeDateTime="03/23/2023 12:17:16">
+    <Property Name="ElementName" Value="[dbo].[OrderPizzas]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="Orders" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="b21f1d3e-d69b-44ca-9638-818f7424b370" ChangeDateTime="03/23/2023 12:41:48">
+    <Property Name="ElementName" Value="[dbo].[Customers]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="Customer" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="30dd6b6e-049e-4778-8de2-47c2849be0f9" ChangeDateTime="03/23/2023 12:42:00">
+    <Property Name="ElementName" Value="[Customer].[Customers]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[Customer]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="Details" />
+  </Operation>
+  <Operation Name="Move Schema" Key="a17b87bc-def2-4aef-89e5-41e54cbe48bf" ChangeDateTime="03/23/2023 12:42:10">
+    <Property Name="ElementName" Value="[dbo].[Delivery]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="Delivery" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ccfd226b-bf0a-4966-871c-7f9154f447c9" ChangeDateTime="03/23/2023 12:42:22">
+    <Property Name="ElementName" Value="[Delivery].[Delivery]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[Delivery]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="Details" />
+  </Operation>
+  <Operation Name="Move Schema" Key="6bc4ec01-0e13-4f5f-a976-e1a50ac670b9" ChangeDateTime="03/23/2023 12:42:34">
+    <Property Name="ElementName" Value="[dbo].[Orders]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="Order" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="78aaa037-35fa-4781-b8f3-a3d8846cf8e6" ChangeDateTime="03/23/2023 12:42:44">
+    <Property Name="ElementName" Value="[Order].[Orders]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[Order]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="Details" />
+  </Operation>
+  <Operation Name="Move Schema" Key="00d395d0-c135-44e5-838a-9baf74fcc893" ChangeDateTime="03/23/2023 12:42:56">
+    <Property Name="ElementName" Value="[dbo].[OrderStatus]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="Order" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="61395100-1869-41ff-91b9-7b6b3a66f9c3" ChangeDateTime="03/23/2023 12:43:06">
+    <Property Name="ElementName" Value="[Order].[OrderStatus]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[Order]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="Status" />
+  </Operation>
+  <Operation Name="Move Schema" Key="4ec30592-adb2-4880-b345-a74a20fb54a7" ChangeDateTime="03/23/2023 12:51:42">
+    <Property Name="ElementName" Value="[dbo].[Payment]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="Payment" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c4d8afc1-de1c-46b8-8636-f5c2d316f4af" ChangeDateTime="03/23/2023 12:51:53">
+    <Property Name="ElementName" Value="[Payment].[Payment]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[Payment]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="Details" />
+  </Operation>
+</Operations>

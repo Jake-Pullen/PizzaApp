@@ -56,16 +56,29 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Schemas" />
+    <Folder Include="Tables" />
+    <Folder Include="Data" />
+    <Folder Include="Tables\Customer" />
+    <Folder Include="Tables\Delivery" />
+    <Folder Include="Tables\Order" />
+    <Folder Include="Tables\Payment" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Customers.sql" />
-    <Build Include="Orders.sql" />
-    <Build Include="OrderDetails.sql" />
-    <Build Include="Payments.sql" />
-    <Build Include="OrderStatus.sql" />
-    <Build Include="Delivery.sql" />
+    <Build Include="Schemas\Order.sql" />
+    <PostDeploy Include="Data\AddData.sql" />
+    <Build Include="Schemas\Payment.sql" />
+    <Build Include="Schemas\Delivery.sql" />
+    <Build Include="Schemas\Pizza.sql" />
+    <Build Include="Schemas\Customer.sql" />
+    <Build Include="Tables\Customer\Details.sql" />
+    <Build Include="Tables\Delivery\Details.sql" />
+    <Build Include="Tables\Order\Pizzas.sql" />
+    <Build Include="Tables\Order\Orders.sql" />
+    <Build Include="Tables\Order\Status.sql" />
+    <Build Include="Tables\Payment\Details.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="AddData.sql" />
+    <RefactorLog Include="PizzaDB.refactorlog" />
   </ItemGroup>
 </Project>
