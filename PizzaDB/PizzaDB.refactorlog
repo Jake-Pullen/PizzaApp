@@ -134,4 +134,48 @@
     <Property Name="ParentElementType" Value="SqlSchema" />
     <Property Name="NewName" Value="[status]" />
   </Operation>
+  <Operation Name="Move Schema" Key="3cfbffad-185a-41c5-b6b5-1f3c6ae5c3e1" ChangeDateTime="03/23/2023 14:14:43">
+    <Property Name="ElementName" Value="[dbo].[Templates]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="order" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f9226a52-2971-4ea0-a736-ba2e9409d481" ChangeDateTime="03/23/2023 14:15:50">
+    <Property Name="ElementName" Value="[dbo].[TemplateToppings]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[dbo]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="template_toppings" />
+  </Operation>
+  <Operation Name="Move Schema" Key="e4150f54-11f8-4284-bcb5-6fba8b215342" ChangeDateTime="03/23/2023 14:15:57">
+    <Property Name="ElementName" Value="[dbo].[template_toppings]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="order" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="91ea7e8d-b108-46b4-ae4f-28ce2af868d1" ChangeDateTime="03/23/2023 14:16:36">
+    <Property Name="ElementName" Value="[dbo].[Toppings]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[dbo]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="toppings" />
+  </Operation>
+  <Operation Name="Move Schema" Key="da9776cd-e84b-4982-8b57-626f27dd9495" ChangeDateTime="03/23/2023 14:16:52">
+    <Property Name="ElementName" Value="[dbo].[toppings]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="pizza" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="2e8a1cae-2e51-4e88-b832-3f1e930ba444" ChangeDateTime="03/23/2023 14:17:33">
+    <Property Name="ElementName" Value="[order].[template_toppings]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="pizza" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="4523e166-493d-42c5-845c-cf688fd5c4a2" ChangeDateTime="03/23/2023 14:17:41">
+    <Property Name="ElementName" Value="[order].[templates]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="pizza" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
 </Operations>
