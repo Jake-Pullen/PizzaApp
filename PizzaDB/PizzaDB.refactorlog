@@ -198,4 +198,18 @@
     <Property Name="NewSchema" Value="order" />
     <Property Name="IsNewSchemaExternal" Value="False" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="d7e58ccd-42e7-40df-a6d7-e17d4740101f" ChangeDateTime="03/28/2023 10:33:52">
+    <Property Name="ElementName" Value="[pizza].[sizes].[size]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[pizza].[sizes]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[external_name]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="89b8bc67-493b-4ea4-8bcd-e5cc7ae510f9" ChangeDateTime="03/28/2023 10:39:33">
+    <Property Name="ElementName" Value="[pizza].[toppings].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[pizza].[toppings]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[topping_id]" />
+  </Operation>
 </Operations>

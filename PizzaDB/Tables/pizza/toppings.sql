@@ -1,4 +1,5 @@
-﻿CREATE TABLE [pizza].toppings
+﻿CREATE TABLE [pizza].[toppings]
 (
-	[Id] INT NOT NULL PRIMARY KEY
+	topping_id INT NOT NULL,
+	CONSTRAINT pk_pizza_toppings PRIMARY KEY (topping_id)
 )
