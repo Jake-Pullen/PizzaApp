@@ -67,7 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schemas\order.sql" />
-    <PostDeploy Include="Data\AddData.sql" />
     <Build Include="Schemas\payment.sql" />
     <Build Include="Schemas\delivery.sql" />
     <Build Include="Schemas\pizza.sql" />
@@ -78,7 +77,7 @@
     <Build Include="Tables\order\details.sql" />
     <Build Include="Tables\Order\status.sql" />
     <Build Include="Tables\Payment\details.sql" />
-    <Build Include="Tables\Order\pizza_toppings.sql" />
+    <Build Include="Tables\order\pizza_toppings.sql" />
     <Build Include="Tables\pizza\toppings.sql" />
     <Build Include="Tables\pizza\template_toppings.sql" />
     <Build Include="Tables\pizza\templates.sql" />

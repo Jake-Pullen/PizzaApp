@@ -178,4 +178,24 @@
     <Property Name="NewSchema" Value="pizza" />
     <Property Name="IsNewSchemaExternal" Value="False" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="0e12ea1b-09b9-45e4-a029-03c3e9e8ce89" ChangeDateTime="03/28/2023 09:46:30">
+    <Property Name="ElementName" Value="[dbo].[pizza_toppings]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[dbo]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[toppings]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="86268862-7397-45e0-9680-081d446cd1dc" ChangeDateTime="03/28/2023 09:47:12">
+    <Property Name="ElementName" Value="[dbo].[toppings]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[dbo]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[pizza_toppings]" />
+  </Operation>
+  <Operation Name="Move Schema" Key="0a8b2783-a9c9-4f2e-9196-08d1d45f5337" ChangeDateTime="03/28/2023 09:47:21">
+    <Property Name="ElementName" Value="[dbo].[pizza_toppings]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="order" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
 </Operations>
