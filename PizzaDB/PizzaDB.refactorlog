@@ -212,4 +212,46 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="[topping_id]" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="180fa102-3cae-4ae7-ab72-769c45eee2d0" ChangeDateTime="03/28/2023 12:58:52">
+    <Property Name="ElementName" Value="[order].[status].[orderstatus_id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[order].[status]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="order_status_id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="602e73d2-6b21-4e30-9469-2238d60182d5" ChangeDateTime="03/28/2023 12:58:58">
+    <Property Name="ElementName" Value="[order].[status].[orderstatus_date]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[order].[status]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="order_status_date" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0e40674f-9d67-4660-8840-bd78f3a43c3b" ChangeDateTime="03/28/2023 12:59:12">
+    <Property Name="ElementName" Value="[order].[status].[orderstatus_time]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[order].[status]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="order_status_time" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2245aa76-1bb5-4a9a-9846-32210ddaebe0" ChangeDateTime="03/28/2023 12:59:18">
+    <Property Name="ElementName" Value="[order].[status].[orderstatus_status]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[order].[status]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="order_status_status" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1bb70943-0237-4f4d-a473-00d010b557d6" ChangeDateTime="03/28/2023 12:59:35">
+    <Property Name="ElementName" Value="[order].[status].[order_status_date]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[order].[status]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="date" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="409d1e6f-8b67-4c05-8e85-5b80a48658da" ChangeDateTime="03/28/2023 12:59:41">
+    <Property Name="ElementName" Value="[order].[status].[order_status_time]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[order].[status]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="time" />
+  </Operation>
 </Operations>

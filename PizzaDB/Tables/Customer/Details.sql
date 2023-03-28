@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [customer].[details] (
-  customer_id INT,
+  customer_id INT NOT NULL,
   full_name VARCHAR(100) NOT NULL,
   phone_num VARCHAR(20) NOT NULL,
   street_address VARCHAR(100) NOT NULL,
