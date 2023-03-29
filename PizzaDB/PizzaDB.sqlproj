@@ -75,13 +75,15 @@
     <Build Include="Tables\Delivery\details.sql" />
     <Build Include="Tables\Order\pizzas.sql" />
     <Build Include="Tables\order\details.sql" />
-    <Build Include="Tables\Order\status.sql" />
+    <Build Include="Tables\Order\status_history.sql" />
     <Build Include="Tables\Payment\details.sql" />
     <Build Include="Tables\order\pizza_toppings.sql" />
     <Build Include="Tables\pizza\toppings.sql" />
     <Build Include="Tables\pizza\template_toppings.sql" />
     <Build Include="Tables\pizza\templates.sql" />
     <Build Include="Tables\pizza\sizes.sql" />
+    <Build Include="Tables\Delivery\drivers.sql" />
+    <Build Include="Tables\Order\status.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="PizzaDB.refactorlog" />
