@@ -254,4 +254,10 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="time" />
   </Operation>
+  <Operation Name="Move Schema" Key="6c959751-3044-426e-b052-1e65e19aaf16" ChangeDateTime="03/29/2023 14:22:50">
+    <Property Name="ElementName" Value="[dbo].[drivers]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="delivery" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
 </Operations>

@@ -82,6 +82,7 @@
     <Build Include="Tables\pizza\template_toppings.sql" />
     <Build Include="Tables\pizza\templates.sql" />
     <Build Include="Tables\pizza\sizes.sql" />
+    <Build Include="Tables\Delivery\drivers.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="PizzaDB.refactorlog" />
