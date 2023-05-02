@@ -29,10 +29,9 @@ def add_new_customer(data,pw_hash):
     conn = connection()
     cursor = conn.cursor()
     cursor.execute("""INSERT INTO customer.details
-    VALUES(
-    ?,?,?,?,?,?,?)
+    VALUES(?,?,?,?,?,?,?)
     """,email,full_name,phone_num,street_address,city,postcode,pw_hash
     )
     conn.commit()
     conn.close()
-    return 
+    return

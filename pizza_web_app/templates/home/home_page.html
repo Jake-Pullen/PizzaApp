@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}
+    Home
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row mb-3">
+        <div class="col">
+            <a href="{{ url_for('auth.register') }}" class="button"> Register </a>
+        </div>
+        <div class="col">
+            <a href="{{ url_for('auth.log_in') }}" class="button"> Log In </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

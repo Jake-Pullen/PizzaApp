@@ -10,9 +10,9 @@ app.config['SECRET_KEY'] = secret_key #.value #used for when we set a proper sec
 
 
 from auth import auth_bp
-
+from home import home_bp
 
 app.register_blueprint(auth_bp,url_prefix='/authentication')
-
+app.register_blueprint(home_bp)
 
 print('Web Server Active on localhost:5555')

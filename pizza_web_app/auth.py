@@ -58,7 +58,6 @@ def register():
             add_new_customer(data,pw_hash)
             #send them to the log in page
             return redirect(url_for('auth.log_in'))
-
     elif request.method == 'GET':
         #page hit, display log in form
         return(render_template("register.html"))
