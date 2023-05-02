@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session
 from pizza_web_app import bcrypt
 from db_read import get_user_id, get_user_info
+from db_write import add_new_customer
 
 auth_bp = Blueprint('auth',__name__, template_folder='templates/auth')
 
@@ -26,9 +27,38 @@ def log_in():
             #email and password has matched, log user in
             #give user_id session token(s)
             #redirect to pizza page? 
+            return(render_template("testing.html"))
         else:
             flash(authentication_error,category='warning')
             return redirect(url_for('auth.log_in'))
     elif request.method == 'GET':
         #page hit, display log in form
         return(render_template("log_in.html"))
+
+@auth_bp.route('/register', methods=["GET","POST"])
+def register():
+    if request.method == "POST":
+        #form filled and sent, go do the work
+        data = request.form
+        email = data.get('email')
+        password1 = data.get('password')
+        password2 = data.get('password2')
+        #first check user doesnt already exist
+        account = get_user_id(email)
+        if account:
+            flash('you already have an account',category='danger')
+            return redirect(url_for('auth.log_in'))
+        #then make sure password entry is correct
+        elif password1 != password2:
+            flash('learn to type your passwords correctly please', category='danger')
+        else:
+            #lets secure this password
+            pw_hash = bcrypt.generate_password_hash(password1).decode('utf-8')
+            #add the details to the db
+            add_new_customer(data,pw_hash)
+            #send them to the log in page
+            return redirect(url_for('auth.log_in'))
+
+    elif request.method == 'GET':
+        #page hit, display log in form
+        return(render_template("register.html"))
