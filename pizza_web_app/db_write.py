@@ -90,3 +90,6 @@ def add_new_customer(data,pw_hash):
     conn.commit()
     conn.close()
     return
+
+def new_custom_pizza(order_details):
+    pass

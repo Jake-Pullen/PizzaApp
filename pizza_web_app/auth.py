@@ -23,10 +23,8 @@ def log_in():
         stored_password = user_info.password_hash
         password_check = bcrypt.check_password_hash(stored_password,password)
         if password_check == True:
-            pass
             #email and password has matched, log user in
-            #give user_id session token(s)
-            #redirect to pizza page? 
+            session['user_id'] = user_id
             return(render_template("testing.html"))
         else:
             flash(authentication_error,category='warning')

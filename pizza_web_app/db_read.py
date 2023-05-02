@@ -19,19 +19,19 @@ def connection():
     conn = pyodbc.connect(cstr)
     return(conn)
 
-def check_toppings():
+def get_pizza_toppings():
     conn = connection()
     cursor = conn.cursor()
-    cursor.execute("SELECT TOP(1) topping_id FROM pizza.toppings")
-    topping_id = cursor.fetchone()
+    cursor.execute("SELECT topping_id,topping_name,topping_category,cost FROM pizza.toppings")
+    topping_info = cursor.fetchall()
     conn.close()
-    return topping_id
+    return topping_info
 
-def check_sizes():
+def get_pizza_sizes():
     conn = connection()
     cursor = conn.cursor()
     cursor.execute("SELECT TOP(1) size_id FROM pizza.sizes")
-    size_id = cursor.fetchone()
+    size_id = cursor.fetchall()
     conn.close()
     return size_id
 
