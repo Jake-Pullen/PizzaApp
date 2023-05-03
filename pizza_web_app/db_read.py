@@ -30,7 +30,7 @@ def get_pizza_toppings():
 def get_pizza_sizes():
     conn = connection()
     cursor = conn.cursor()
-    cursor.execute("SELECT TOP(1) size_id FROM pizza.sizes")
+    cursor.execute("SELECT size_id,external_name,inches,cm,cost FROM pizza.sizes")
     size_id = cursor.fetchall()
     conn.close()
     return size_id
