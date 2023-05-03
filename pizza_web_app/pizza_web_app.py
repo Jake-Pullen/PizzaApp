@@ -1,4 +1,4 @@
-from flask import Flask 
+from flask import Flask
 from flask_bcrypt import Bcrypt
 
 secret_key = 'this_is_not_a_secure_secret_key'
@@ -16,7 +16,7 @@ from db_write import populate_toppings,populate_sizes
 
 app.register_blueprint(auth_bp,url_prefix='/authentication')
 app.register_blueprint(home_bp)
-app.register_blueprint(order_bp,url_prefix='/new_order')
+app.register_blueprint(order_bp,url_prefix='/order')
 
 is_toppings = get_pizza_toppings()
 is_sizes = get_pizza_sizes() 
@@ -24,5 +24,6 @@ if not is_toppings:
     populate_toppings()
 if not is_sizes:
     populate_sizes() 
+
 
 print('Web Server Active on localhost:5555')
