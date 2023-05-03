@@ -59,3 +59,9 @@ def register():
     elif request.method == 'GET':
         #page hit, display log in form
         return(render_template("register.html"))
+
+@auth_bp.route('/logout', methods=["GET"])
+def log_out():
+    session.pop('user_id', default=None)
+    flash('logged out', category="success")
+    return redirect(url_for('home.home_page'))

@@ -6,4 +6,59 @@
 <h1>
     BUY MORE PIZZA
 </h1>
+<form action="{{url_for('order.pizza_maker')}}" method="post">
+    <div> 
+        <h5>Cheese</h5>
+        {% for topping in toppings %}
+        {% if topping.topping_category == 'Cheese' %}
+        <div class="card-body" style="display:inline-block;">
+            <p class="card-text"> {{ topping.topping_name }} £{{ topping.cost }}</p>
+            <input type="checkbox" name={{topping.topping_id}} id={{topping.topping_id}}  {% if topping.topping_name == 'Mozzarella' %} checked {% endif %}>
+            <label for="cheese_selected">Choose this Cheese</label>
+            <!-- <input type="hidden" name="topping_id" value = "{{topping.topping_id}}"> -->
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div> 
+        <h5>Meat</h5>
+        {% for topping in toppings %}
+        {% if topping.topping_category == 'Meat' %}
+        <div class="card-body" style="display:inline-block;">
+            <p class="card-text"> {{ topping.topping_name }} £{{ topping.cost }}</p>
+            <input type="checkbox" name={{topping.topping_id}} id={{topping.topping_id}}>
+            <label for="meat_selected">Choose this Meat</label>
+            <!-- <input type="hidden" name="topping_id" value = "{{topping.topping_id}}"> -->
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div> 
+        <h5>Veg</h5>
+        {% for topping in toppings %}
+        {% if topping.topping_category == 'Vegetables' %}
+        <div class="card-body" style="display:inline-block;">
+            <p class="card-text"> {{ topping.topping_name }} £{{ topping.cost }}</p>
+            <input type="checkbox" name={{topping.topping_id}} id={{topping.topping_id}}>
+            <label for="veg_selected">Choose this Veg</label>
+            <!-- <input type="hidden" name="topping_id" value = "{{topping.topping_id}}"> -->
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div> 
+        <h5>Extras</h5>
+        {% for topping in toppings %}
+        {% if topping.topping_category == 'misc' %}
+        <div class="card-body" style="display:inline-block;">
+            <p class="card-text"> {{ topping.topping_name }} £{{ topping.cost }}</p>
+            <input type="checkbox" name={{topping.topping_id}} id={{topping.topping_id}}>
+            <label for="extra_selected">Choose this extra</label>
+           <!-- <input type="hidden" name="topping_id" value = "{{topping.topping_id}}"> -->
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <input type="submit" value="Add To Basket">
+</form>
 {% endblock %}

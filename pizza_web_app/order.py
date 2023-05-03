@@ -20,4 +20,6 @@ def pizza_maker():
                                user_id = user_id)
     elif request.method == "POST":
         order_details = request.form
+        print(order_details)
         new_custom_pizza(order_details)
+        return redirect(url_for('home.home_page'))

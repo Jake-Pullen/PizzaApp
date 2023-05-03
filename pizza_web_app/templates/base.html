@@ -12,6 +12,7 @@
 </head>
 
 <body>
+<a href="{{ url_for('home.home_page') }}" class="button"> Home </a>
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
         {% for category, message in messages %}
@@ -22,6 +23,7 @@
         {% endfor %}
         {% endif %}
         {% endwith %}
+        <hr>
         <div>
             {% block content %}
 
