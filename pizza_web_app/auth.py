@@ -24,8 +24,8 @@ def log_in():
         password_check = bcrypt.check_password_hash(stored_password,password)
         if password_check == True:
             #email and password has matched, log user in
-            session['user_id'] = user_id
-            return(render_template("testing.html"))
+            session['user_id'] = user_id[0]
+            return redirect(url_for('order.pizza_maker'))
         else:
             flash(authentication_error,category='warning')
             return redirect(url_for('auth.log_in'))

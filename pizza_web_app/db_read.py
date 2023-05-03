@@ -46,7 +46,7 @@ def get_user_id(user_name):
 def get_user_info(user_id):
     conn = connection()
     cursor = conn.cursor()
-    cursor.execute("SELECT customer_id, email, full_name, password_hash FROM customer.details WHERE customer_id = ?",user_id)# i know * bad practice, fight me
+    cursor.execute("SELECT customer_id, email, full_name, password_hash FROM customer.details WHERE customer_id = ?",user_id)
     user = cursor.fetchone()
     conn.close()
     return user

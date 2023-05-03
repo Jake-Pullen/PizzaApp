@@ -7,17 +7,17 @@ order_bp = Blueprint('order',__name__, template_folder='templates/order')
 @order_bp.route('/', methods=["GET","POST"])
 def pizza_maker():
     #check user is logged in, if not send them to log in
-    user_id = session.get['user_id']
+    user_id = session.get('user_id')
     if not user_id:
         flash('please log in first', category='danger')
         return redirect(url_for('auth.log_in'))
-    elif request.method("GET"):
+    if request.method == "GET":
         toppings = get_pizza_toppings()
         sizes = get_pizza_sizes()
         return render_template('order_pizza.html',
                                toppings=toppings,
                                sizes=sizes,
                                user_id = user_id)
-    elif request.method("POST"):
+    elif request.method == "POST":
         order_details = request.form
         new_custom_pizza(order_details)
