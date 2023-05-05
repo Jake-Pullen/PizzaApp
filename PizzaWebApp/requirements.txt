@@ -1,0 +1,5 @@
+Flask
+markupsafe
+flask_bcrypt
+pyodbc
+## waitress ## later down the line

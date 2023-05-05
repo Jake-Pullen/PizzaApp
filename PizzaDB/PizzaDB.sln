@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PizzaDB", "PizzaDB.sqlproj", "{8CD6910E-51C6-402E-AA76-80FA83CBD32F}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PizzaWebApp", "..\PizzaWebApp\PizzaWebApp.pyproj", "{B391A57C-B56C-4739-9A0C-80B7DDC35DCF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{8CD6910E-51C6-402E-AA76-80FA83CBD32F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CD6910E-51C6-402E-AA76-80FA83CBD32F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8CD6910E-51C6-402E-AA76-80FA83CBD32F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B391A57C-B56C-4739-9A0C-80B7DDC35DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B391A57C-B56C-4739-9A0C-80B7DDC35DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B391A57C-B56C-4739-9A0C-80B7DDC35DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B391A57C-B56C-4739-9A0C-80B7DDC35DCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

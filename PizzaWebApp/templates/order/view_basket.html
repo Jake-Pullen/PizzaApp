@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}
+    Basket
+{% endblock %}
+{% block content %}
+<h1>
+    Basket
+</h1>
+<div>
+    <p> Order Status: {{basket.order_status}}</p>
+    <p> Pizza count: {{basket.pizza_count}}</p>
+    {% for pizza in basket_items %}
+    <div>
+        <p>
+            {{pizza.pizza_size}} | {{pizza.toppings}} | {{pizza.pizza_cost}}
+        </p>
+    </div>
+    {% endfor %}
+    <p>Total Price: {{basket.total_cost}}</p>
+</div>
+<form method="POST" action="{{ url_for('order.view_basket') }}">
+    <button type="submit" class="button">Place Order</button>
+  </form>
+{% endblock %}
