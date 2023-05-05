@@ -6,7 +6,7 @@
 <h1>
     BUY MORE PIZZA
 </h1>
-<form action="{{url_for('order.pizza_maker')}}" method="post">
+<form action="{{url_for('order.add_to_basket')}}" method="POST">
     <div> 
         <h5>Size</h5>
         {% for size in sizes %}
@@ -23,7 +23,7 @@
         {% if topping.topping_category == 'Cheese' %}
         <div class="card-body" style="display:inline-block;">
             <p class="card-text"> {{ topping.topping_name }} £{{ topping.cost }}</p>
-            <input type="checkbox" id='cheeses' name='selected_cheese' value={{topping.topping_id}}  {% if topping.topping_name == 'Mozzarella' %} checked {% endif %}>
+            <input type="checkbox" id='cheeses' name='selected_topping' value={{topping.topping_id}}  {% if topping.topping_name == 'Mozzarella' %} checked {% endif %}>
             <label for="cheese_selected">Choose this Cheese</label>
         </div>
         {% endif %}
@@ -35,7 +35,7 @@
         {% if topping.topping_category == 'Meat' %}
         <div class="card-body" style="display:inline-block;">
             <p class="card-text"> {{ topping.topping_name }} £{{ topping.cost }}</p>
-            <input type="checkbox" id='Meats' name='selected_meat' value={{topping.topping_id}}>
+            <input type="checkbox" id='Meats' name='selected_topping' value={{topping.topping_id}}>
             <label for="meat_selected">Choose this Meat</label>
         </div>
         {% endif %}
@@ -47,7 +47,7 @@
         {% if topping.topping_category == 'Vegetables' %}
         <div class="card-body" style="display:inline-block;">
             <p class="card-text"> {{ topping.topping_name }} £{{ topping.cost }}</p>
-            <input type="checkbox" id='vegetables' name='selected_veg' value={{topping.topping_id}}>
+            <input type="checkbox" id='vegetables' name='selected_topping' value={{topping.topping_id}}>
             <label for="veg_selected">Choose this Veg</label>
         </div>
         {% endif %}
@@ -59,7 +59,7 @@
         {% if topping.topping_category == 'misc' %}
         <div class="card-body" style="display:inline-block;">
             <p class="card-text"> {{ topping.topping_name }} £{{ topping.cost }}</p>
-            <input type="checkbox" id='extras' name='selected_extra' value={{topping.topping_id}}>
+            <input type="checkbox" id='extras' name='selected_topping' value={{topping.topping_id}}>
             <label for="extra_selected">Choose this extra</label>
         </div>
         {% endif %}

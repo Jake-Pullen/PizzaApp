@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [order].[pizzas] (
-  order_pizza_id INT NOT NULL,
+  order_pizza_id INT NOT NULL IDENTITY(1,1),
   order_id INT NOT NULL,
   pizza_template_id INT NULL,
   pizza_size_id INT NULL,

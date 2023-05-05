@@ -19,6 +19,14 @@ def connection():
     conn = pyodbc.connect(cstr)
     return(conn)
 
+def check_open_orders(user_id): 
+    conn = connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT TOP (1) order_id FROM [order].[details] WHERE customer_id = ? AND status_id = 1 ORDER BY order_id DESC",user_id)
+    order_id = cursor.fetchone()
+    conn.close()
+    return order_id.order_id
+
 def get_pizza_toppings():
     conn = connection()
     cursor = conn.cursor()
@@ -41,7 +49,7 @@ def get_user_id(user_name):
     cursor.execute("SELECT customer_id FROM customer.details WHERE email = ?",user_name)
     user_id = cursor.fetchone()
     conn.close()
-    return user_id
+    return user_id.customer_id
 
 def get_user_info(user_id):
     conn = connection()

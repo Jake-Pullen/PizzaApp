@@ -91,5 +91,30 @@ def add_new_customer(data,pw_hash):
     conn.close()
     return
 
-def new_custom_pizza(order_details):
-    pass
+def start_new_order(user_id):
+    conn = connection()
+    cursor = conn.cursor()
+    cursor.execute("""INSERT INTO [order].details(customer_id,created_date,total_cost,status_id)
+    VALUES(?,GETUTCDATE(),0,1 )
+    """,user_id)
+    conn.commit()
+    conn.close()
+    return
+
+def new_custom_pizza(order_id, order_details):
+    pizza_size = order_details.get('selected_size')
+    pizza_toppings = order_details.getlist('selected_topping')
+    conn = connection()
+    cursor = conn.cursor()
+    cursor.execute("""INSERT INTO [order].pizzas(order_id,pizza_size_id,is_custom)
+    VALUES(?,?,1)
+    """,order_id,pizza_size)
+    conn.commit()
+    cursor.execute("SELECT TOP (1) order_pizza_id FROM [order].pizzas WHERE order_id = ? ORDER BY order_pizza_id DESC",order_id)
+    pizza_id = cursor.fetchone()
+    print(pizza_id.order_pizza_id)
+    for topping in pizza_toppings:
+        cursor.execute("INSERT INTO [order].pizza_toppings(order_pizza_id,topping_id) VALUES(?,?)",pizza_id.order_pizza_id,topping)
+    conn.commit()
+    conn.close()
+    return

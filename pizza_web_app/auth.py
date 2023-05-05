@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session
 from pizza_web_app import bcrypt
-from db_read import get_user_id, get_user_info
+from db_read import get_user_id, get_user_info,check_open_orders
 from db_write import add_new_customer
 
 auth_bp = Blueprint('auth',__name__, template_folder='templates/auth')
@@ -24,7 +24,13 @@ def log_in():
         password_check = bcrypt.check_password_hash(stored_password,password)
         if password_check == True:
             #email and password has matched, log user in
-            session['user_id'] = user_id[0]
+            session['user_id'] = user_id
+            #check here for open basket? 
+            order_id = check_open_orders(user_id)
+            if not order_id: 
+                session['order_id'] = 0
+            else:
+                session['order_id'] = order_id
             return redirect(url_for('order.pizza_maker'))
         else:
             flash(authentication_error,category='warning')
@@ -63,5 +69,6 @@ def register():
 @auth_bp.route('/logout', methods=["GET"])
 def log_out():
     session.pop('user_id', default=None)
+    session.pop('order_id', default=None)
     flash('logged out', category="success")
     return redirect(url_for('home.home_page'))
