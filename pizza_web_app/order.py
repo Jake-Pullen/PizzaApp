@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session, Markup
 from db_read import get_pizza_sizes, get_pizza_toppings,check_open_orders, get_basket, basket_count, get_basket_items
-from db_write import new_custom_pizza, start_new_order
+from db_write import new_custom_pizza, start_new_order, order_the_pizza
 
 order_bp = Blueprint('order',__name__, template_folder='templates/order')
 pizza_count = int(0)
@@ -49,15 +49,21 @@ def add_to_basket():
 
 @order_bp.route('/basket', methods=["GET","POST"])
 def view_basket():
+    user_id = session.get('user_id')
+    order_id = session.get('order_id')
+    num_items_in_basket = session.get('num_items_in_basket')
+    basket = get_basket(user_id,order_id)
+    basket_items = get_basket_items(user_id,order_id)
     if request.method == "GET":        
-        user_id = session.get('user_id')
-        order_id = session.get('order_id')
-        num_items_in_basket = session.get('num_items_in_basket')
-        basket = get_basket(user_id,order_id)
-        basket_items = get_basket_items(user_id,order_id)
         return render_template('view_basket.html',
                                 basket=basket,
                                 basket_items = basket_items,
                                 user_id=user_id,
                                 num_items_in_basket=num_items_in_basket
                                 )
+    if request.method == "POST":
+        order_the_pizza(order_id)
+        session.pop('num_items_in_basket', default=0)
+        session.pop('order_id', default=0)
+        flash( 'Order Placed! Expected Delivery Time: Never', category='success' )
+        return redirect(url_for('home.home_page'))

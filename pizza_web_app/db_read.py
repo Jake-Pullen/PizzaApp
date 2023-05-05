@@ -48,6 +48,14 @@ def get_pizza_toppings():
     conn.close()
     return topping_info
 
+def get_order_statuses():
+    conn = connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT status_id FROM [order].[status]")
+    status_info = cursor.fetchall()
+    conn.close()
+    return status_info
+
 def get_pizza_sizes():
     conn = connection()
     cursor = conn.cursor()

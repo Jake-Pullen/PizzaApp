@@ -18,4 +18,7 @@
     {% endfor %}
     <p>Total Price: {{basket.total_cost}}</p>
 </div>
+<form method="POST" action="{{ url_for('order.view_basket') }}">
+    <button type="submit" class="button">Place Order</button>
+  </form>
 {% endblock %}

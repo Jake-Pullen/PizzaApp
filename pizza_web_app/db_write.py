@@ -74,6 +74,19 @@ VALUES
     conn.close()
     return
 
+def populate_order_status():
+    conn = connection()
+    cursor = conn.cursor()
+    cursor.execute("""INSERT INTO [order].[status]
+VALUES 
+ (1,'In Basket')
+,(2,'Order Placed')
+,(3,'Delivered');""")
+    conn.commit()
+    conn.close()
+    return
+
+
 def add_new_customer(data,pw_hash):
     email = data.get('email')
     full_name = data.get('full_name')
@@ -139,5 +152,18 @@ def new_custom_pizza(order_id, order_details):
         ON op.order_id = od.order_id
     WHERE op.order_pizza_id = {pizza_id[0]}
     """)
+    conn.commit()
+    conn.close()
+    return
+
+def order_the_pizza(order_id):
+    conn = connection()
+    cursor = conn.cursor()
+    cursor.execute(""" UPDATE od
+    SET od.status_id = 2
+    FROM [order].[details] AS od 
+    WHERE od.order_id = ?
+    """,order_id)
+    conn.commit()
     conn.close()
     return
