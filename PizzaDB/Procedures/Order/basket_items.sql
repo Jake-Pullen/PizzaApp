@@ -1,4 +1,4 @@
-CREATE PROCEDURE [order].[basket_items]
+﻿CREATE PROCEDURE [order].[basket_items]
     @order_id INT
     ,@user_id INT
 AS 
@@ -25,5 +25,4 @@ BEGIN
         ,ps.external_name
         ,od.total_cost
 		,ps.cost
-
 END

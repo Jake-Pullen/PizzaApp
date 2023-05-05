@@ -1,6 +1,4 @@
-DROP PROCEDURE [order].[basket]
-GO
-CREATE PROCEDURE [order].[basket]
+﻿CREATE PROCEDURE [order].[basket]
     @order_id INT
     ,@user_id INT
 AS 
