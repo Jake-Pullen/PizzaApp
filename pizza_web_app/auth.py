@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session
 from pizza_web_app import bcrypt
-from db_read import get_user_id, get_user_info,check_open_orders
+from db_read import get_user_id, get_user_info,check_open_orders, basket_count
 from db_write import add_new_customer
 
 auth_bp = Blueprint('auth',__name__, template_folder='templates/auth')
@@ -31,6 +31,8 @@ def log_in():
                 session['order_id'] = 0
             else:
                 session['order_id'] = order_id
+                num_items_in_basket = basket_count(order_id)
+                session['num_items_in_basket'] = num_items_in_basket
             return redirect(url_for('order.pizza_maker'))
         else:
             flash(authentication_error,category='warning')

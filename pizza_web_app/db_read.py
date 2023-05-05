@@ -15,17 +15,30 @@ db_connection_string = fr'Driver=SQL Server;Server={server};Database={database};
 
 
 def connection():
-    cstr = db_connection_string#.value
+    cstr = db_connection_string
     conn = pyodbc.connect(cstr)
     return(conn)
+
+def basket_count(order_id): 
+    conn = connection()
+    cursor = conn.cursor()
+    cursor.execute("""SELECT CASE WHEN COUNT(*) IS NULL THEN 0 ELSE COUNT(*) END AS pizza_count
+    FROM [order].[pizzas] AS op
+    WHERE op.order_id = ?""",order_id)
+    basket_count = cursor.fetchone()
+    conn.close()
+    return basket_count.pizza_count
 
 def check_open_orders(user_id): 
     conn = connection()
     cursor = conn.cursor()
-    cursor.execute("SELECT TOP (1) order_id FROM [order].[details] WHERE customer_id = ? AND status_id = 1 ORDER BY order_id DESC",user_id)
+    cursor.execute("SELECT order_id FROM [order].[details] WHERE customer_id = ? AND status_id = 1",user_id)
     order_id = cursor.fetchone()
     conn.close()
-    return order_id.order_id
+    if order_id:
+        return order_id.order_id
+    else:
+        return
 
 def get_pizza_toppings():
     conn = connection()
@@ -49,7 +62,8 @@ def get_user_id(user_name):
     cursor.execute("SELECT customer_id FROM customer.details WHERE email = ?",user_name)
     user_id = cursor.fetchone()
     conn.close()
-    return user_id.customer_id
+    if user_id:
+        return user_id.customer_id
 
 def get_user_info(user_id):
     conn = connection()
@@ -58,3 +72,19 @@ def get_user_info(user_id):
     user = cursor.fetchone()
     conn.close()
     return user
+
+def get_basket(user_id, order_id):
+    conn = connection()
+    cursor = conn.cursor()
+    cursor.execute(f"EXEC [order].[basket] {order_id},{user_id}")
+    basket = cursor.fetchone()
+    conn.close()
+    return basket
+
+def get_basket_items(user_id, order_id):
+    conn = connection()
+    cursor = conn.cursor()
+    cursor.execute(f"EXEC [order].[basket_items] {order_id},{user_id}")
+    basket_items = cursor.fetchall()
+    conn.close()
+    return basket_items

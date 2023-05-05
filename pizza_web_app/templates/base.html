@@ -13,6 +13,15 @@
 
 <body>
 <a href="{{ url_for('home.home_page') }}" class="button"> Home </a>
+{% if not user_id %}
+<a href="{{ url_for('auth.log_in') }}" class="button"> Log In </a>
+<a href="{{ url_for('auth.register') }}" class="button"> Register </a>
+{% endif %}
+{% if user_id %}
+<a href="{{ url_for('order.pizza_maker') }}" class="button"> Start Order </a>
+<a href="{{ url_for('order.view_basket') }}" class="button"> Basket ({{num_items_in_basket}}) </a>
+<a href="{{ url_for('auth.log_out') }}" class="button"> Log Out </a>
+{% endif %}
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
         {% for category, message in messages %}

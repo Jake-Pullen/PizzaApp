@@ -7,14 +7,15 @@
     Basket
 </h1>
 <div>
-    <p> {{pizzas}} </p>
-    {% for pizza in pizzas %}
+    <p> Order Status: {{basket.order_status}}</p>
+    <p> Pizza count: {{basket.pizza_count}}</p>
+    {% for pizza in basket_items %}
     <div>
         <p>
-            {{pizza.0}} a
-            {{pizza.1}}
+            {{pizza.pizza_size}} | {{pizza.toppings}} | {{pizza.pizza_cost}}
         </p>
     </div>
     {% endfor %}
+    <p>Total Price: {{basket.total_cost}}</p>
 </div>
 {% endblock %}
