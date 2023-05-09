@@ -10,7 +10,7 @@ host_name = socket.gethostname()
 sql_version = sql_ver(host_name)
 
 server = f'{host_name}{sql_version}'
-database = 'pizza_master' #probably? maybe 'pizzaDB'
+database = 'pizzaDB'
 db_connection_string = fr'Driver=SQL Server;Server={server};Database={database};Trusted_Connection=yes;'
 
 
