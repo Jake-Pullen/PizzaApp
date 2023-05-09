@@ -1,18 +1,9 @@
 import pyodbc
 import socket
 
-def sql_ver(host_name):
-    if host_name == 'Work-JP': #because JP is stupid enough to have 2 sql engines.... 
-        return '\MSSQLSERVER22'
-    else:
-        return ''
 host_name = socket.gethostname()
-sql_version = sql_ver(host_name)
-
-server = f'{host_name}{sql_version}'
 database = 'pizzaDB'
-db_connection_string = fr'Driver=SQL Server;Server={server};Database={database};Trusted_Connection=yes;'
-
+db_connection_string = fr'Driver=SQL Server;Server={host_name};Database={database};Trusted_Connection=yes;'
 
 def connection():
     cstr = db_connection_string
