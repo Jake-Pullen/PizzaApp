@@ -4,7 +4,6 @@ import socket
 host_name = socket.gethostname()
 database = 'pizzaDB'
 db_connection_string = fr'Driver=SQL Server;Server={host_name};Database={database};Trusted_Connection=yes;'
-print(db_connection_string)
 
 def connection():
     cstr = db_connection_string
