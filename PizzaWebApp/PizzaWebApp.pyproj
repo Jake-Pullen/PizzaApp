@@ -34,6 +34,7 @@
     <Compile Include="home.py" />
     <Compile Include="order.py" />
     <Compile Include="pizza_web_app.py" />
+    <Compile Include="run_web_server.py" />
     <Compile Include="test_web_server.py" />
     <Compile Include="__init__.py" />
   </ItemGroup>

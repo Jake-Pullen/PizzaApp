@@ -1,4 +1,5 @@
 import os 
+from waitress import serve
 from pizza_web_app import app 
 
 if __name__ == '__main__':
@@ -7,4 +8,7 @@ if __name__ == '__main__':
         PORT = int(os.environ.get('SERVER_PORT','5555'))
     except ValueError:
         PORT = 5555
-    app.run(HOST,PORT,debug=True)
+    if HOST == 'localhost':
+        app.run(HOST,PORT,debug=True)
+    else:
+        serve(app,host=HOST,port=PORT,threads=1)
