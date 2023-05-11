@@ -2,4 +2,6 @@ Flask
 markupsafe
 flask_bcrypt
 pyodbc
+azure-keyvault-secrets
+azure-identity
 ## waitress ## later down the line

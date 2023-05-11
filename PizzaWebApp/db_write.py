@@ -1,9 +1,16 @@
+from azure.identity import DefaultAzureCredential
+from azure.keyvault.secrets import SecretClient
 import pyodbc
-import socket
+#import socket
 
-host_name = socket.gethostname()
-database = 'pizzaDB'
-db_connection_string = fr'Driver=SQL Server;Server={host_name};Database={database};Trusted_Connection=yes;'
+#host_name = socket.gethostname()
+#database = 'pizzaDB'
+#db_connection_string = fr'Driver=SQL Server;Server={host_name};Database={database};Trusted_Connection=yes;'
+
+key_vault_url = 'https://adjp-pizza-co-key-vault.vault.azure.net/'
+credential = DefaultAzureCredential()
+client = SecretClient(vault_url=key_vault_url,credential=credential)
+db_connection_string = client.get_secret('adjp-pizza-co-db-connection-string')
 
 def connection():
     cstr = db_connection_string
