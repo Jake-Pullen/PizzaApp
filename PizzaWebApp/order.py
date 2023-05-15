@@ -64,5 +64,5 @@ def view_basket():
         db_write.order_the_pizza(order_id)
         session.pop('num_items_in_basket', default=0)
         session.pop('order_id', default=0)
-        flash(Markup( 'Order Placed! Expected Delivery Time:<a href="https://www.dominos.co.uk/">Order some real pizza here</a>'), category='success' )
+        flash(Markup( 'Order Placed! Expected Delivery Time:<a href="https://www.dominos.co.uk/">Never.... Order some real pizza here</a>'), category='success' )
         return redirect(url_for('home.home_page'))
