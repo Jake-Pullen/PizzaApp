@@ -29,6 +29,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="auth.py" />
+    <Compile Include="db_calls.py" />
     <Compile Include="db_read.py" />
     <Compile Include="db_write.py" />
     <Compile Include="home.py" />
