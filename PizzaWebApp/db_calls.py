@@ -107,7 +107,7 @@ class db_write:
     ,('Parmesan','Cheese',1)
     ,('Romano','Cheese',1)
     ,('Fontina','Cheese',1)
-    ,('Gruyère','Cheese',1)
+    ,('Gruyere','Cheese',1)
     ,('Gorgonzola','Cheese',1)
     ,('Blue cheese','Cheese',1)
     ,('Goat cheese','Cheese',1)
@@ -134,7 +134,8 @@ class db_write:
     ,('Eggplant','Vegetables',2)
     ,('Pineapple','Vegetables',2)
     ,('chilli flakes','misc',1.5)
-    ,('burger sauce','misc',1.5);""")
+    ,('burger sauce','misc',1.5);
+""")
         conn.commit()
         conn.close()
         return
