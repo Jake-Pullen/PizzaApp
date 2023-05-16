@@ -2,7 +2,7 @@ import os
 from waitress import serve
 from pizza_web_app import app 
 
-testing = 1
+testing = 0
 
 if __name__ == '__main__':
     HOST = os.environ.get('SERVER_HOST', 'localhost')
