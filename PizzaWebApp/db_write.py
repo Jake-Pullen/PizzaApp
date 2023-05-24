@@ -157,3 +157,49 @@ def order_the_pizza(order_id):
     conn.commit()
     conn.close()
     return
+
+def remove_pizza_from_basket(order_pizza_id):
+    conn = connection()
+    cursor = conn.cursor()
+    cursor.execute(""" DELETE FROM [order].[pizza_toppings]
+    WHERE order_pizza_id = ?
+    """,order_pizza_id)
+    conn.commit()
+    cursor.execute(""" DELETE FROM [order].[pizzas]
+    WHERE order_pizza_id = ?
+    """,order_pizza_id)
+    conn.commit()
+    conn.close()
+    return
+
+def remove_topping_from_basket(order_pizza_id,topping_id):
+    conn = connection()
+    cursor = conn.cursor()
+    cursor.execute(""" DELETE FROM [order].[pizza_toppings]
+    WHERE order_pizza_id = ? AND topping_id = ?
+    """,order_pizza_id,topping_id)
+    conn.commit()
+    conn.close()
+    return
+
+def add_topping_to_basket(order_pizza_id,topping_id):
+    conn = connection()
+    cursor = conn.cursor()
+    cursor.execute(""" INSERT INTO [order].[pizza_toppings]
+    VALUES(?,?)
+    """,order_pizza_id,topping_id)
+    conn.commit()
+    conn.close()
+    return
+
+def change_size_in_basket(order_pizza_id,size_id):
+    conn = connection()
+    cursor = conn.cursor()
+    cursor.execute(""" UPDATE op
+    SET op.pizza_size_id = ?
+    FROM [order].[pizzas] AS op 
+    WHERE op.order_pizza_id = ?
+    """,size_id,order_pizza_id)
+    conn.commit()
+    conn.close()
+    return
