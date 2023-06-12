@@ -17,6 +17,7 @@
     <Name>PizzaWebApp</Name>
     <RootNamespace>PizzaWebApp</RootNamespace>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,6 +38,7 @@
     <Compile Include="__init__.py" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\ADJP-pizza-web-app - Web Deploy.pubxml" />
     <Content Include="requirements.txt" />
     <Content Include="static\style.css" />
     <Content Include="templates\auth\log_in.html" />
@@ -48,6 +50,8 @@
     <Content Include="templates\order\view_basket.html" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="static\" />
     <Folder Include="templates\" />
     <Folder Include="templates\auth\" />
